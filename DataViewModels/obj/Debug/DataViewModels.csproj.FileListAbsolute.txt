@@ -1,0 +1,5 @@
+D:\Projects\ImageTestProject\DataViewModels\bin\Debug\DataViewModels.dll
+D:\Projects\ImageTestProject\DataViewModels\bin\Debug\DataViewModels.pdb
+D:\Projects\ImageTestProject\DataViewModels\obj\Debug\DataViewModels.csprojResolveAssemblyReference.cache
+D:\Projects\ImageTestProject\DataViewModels\obj\Debug\DataViewModels.dll
+D:\Projects\ImageTestProject\DataViewModels\obj\Debug\DataViewModels.pdb

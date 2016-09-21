@@ -1,0 +1,10 @@
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\ImageDataBase.dll.config
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\ImageDataBase.dll
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\ImageDataBase.pdb
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\EntityFramework.dll
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\EntityFramework.xml
+D:\Projects\ImageTestProject\ImageDataBase\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\ImageTestProject\ImageDataBase\obj\Debug\ImageData.csprojResolveAssemblyReference.cache
+D:\Projects\ImageTestProject\ImageDataBase\obj\Debug\ImageDataBase.dll
+D:\Projects\ImageTestProject\ImageDataBase\obj\Debug\ImageDataBase.pdb
