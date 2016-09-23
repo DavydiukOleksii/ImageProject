@@ -1,0 +1,19 @@
+# Test folder
+ConsoleUI/
+
+DataRepository/bin/
+DataRepository/obj/
+
+DataViewModels/bin/
+DataViewModels/obj/
+
+ImageDataBase/bin/
+ImageDataBase/obj/
+
+ImageServer/bin/
+ImageServer/obj/
+
+WpfClient/bin/
+WpfClient/obj/
+
+#/ConseleUI/*.txt ignor txt files
