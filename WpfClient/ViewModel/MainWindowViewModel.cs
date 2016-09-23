@@ -52,7 +52,7 @@ namespace WpfClient.View.ViewModel
 
         protected override void OnDispose() 
         {
-            this.Images.Count();
+            this.Images.Except(Images);
         }
     }
 }

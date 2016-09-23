@@ -10,3 +10,4 @@ D:\Projects\ImageTestProject\WpfClient\obj\Debug\WpfClient.View.Properties.Resou
 D:\Projects\ImageTestProject\WpfClient\obj\Debug\WpfClient.csproj.GenerateResource.Cache
 D:\Projects\ImageTestProject\WpfClient\obj\Debug\WpfClient.exe
 D:\Projects\ImageTestProject\WpfClient\obj\Debug\WpfClient.pdb
+D:\Projects\ImageTestProject\WpfClient\obj\Debug\WpfClient.csprojResolveAssemblyReference.cache
