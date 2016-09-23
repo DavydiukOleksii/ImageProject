@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageData", "ImageDataBase\ImageData.csproj", "{07DD24E3-653D-42F0-8DDA-16C483D106A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewModels", "DataViewModels\DataViewModels.csproj", "{6254B670-3A95-4FA9-ABC7-4B79EDF6512C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "DataRepository\DataRepository.csproj", "{D5AABE49-FF1F-42E6-B358-327F73A57D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageServer", "ImageServer\ImageServer.csproj", "{ADA222D3-5384-43A1-9326-DC659419DB34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{14A5EE92-4F96-4ACB-97A6-E4E5B0AA3E66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ADA222D3-5384-43A1-9326-DC659419DB34} = {ADA222D3-5384-43A1-9326-DC659419DB34}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfClient", "WpfClient\WpfClient.csproj", "{8388F939-2FC0-4163-8BA3-50132682B43A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ADA222D3-5384-43A1-9326-DC659419DB34} = {ADA222D3-5384-43A1-9326-DC659419DB34}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07DD24E3-653D-42F0-8DDA-16C483D106A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DD24E3-653D-42F0-8DDA-16C483D106A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DD24E3-653D-42F0-8DDA-16C483D106A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DD24E3-653D-42F0-8DDA-16C483D106A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6254B670-3A95-4FA9-ABC7-4B79EDF6512C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6254B670-3A95-4FA9-ABC7-4B79EDF6512C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6254B670-3A95-4FA9-ABC7-4B79EDF6512C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6254B670-3A95-4FA9-ABC7-4B79EDF6512C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5AABE49-FF1F-42E6-B358-327F73A57D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5AABE49-FF1F-42E6-B358-327F73A57D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5AABE49-FF1F-42E6-B358-327F73A57D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5AABE49-FF1F-42E6-B358-327F73A57D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA222D3-5384-43A1-9326-DC659419DB34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA222D3-5384-43A1-9326-DC659419DB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA222D3-5384-43A1-9326-DC659419DB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA222D3-5384-43A1-9326-DC659419DB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A5EE92-4F96-4ACB-97A6-E4E5B0AA3E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A5EE92-4F96-4ACB-97A6-E4E5B0AA3E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A5EE92-4F96-4ACB-97A6-E4E5B0AA3E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A5EE92-4F96-4ACB-97A6-E4E5B0AA3E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8388F939-2FC0-4163-8BA3-50132682B43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8388F939-2FC0-4163-8BA3-50132682B43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8388F939-2FC0-4163-8BA3-50132682B43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8388F939-2FC0-4163-8BA3-50132682B43A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
