@@ -18,19 +18,53 @@ namespace ImageData
             context.ImageEntitys.Add(new ImageEntity
             {
                 Description = "First image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageModel\Image\images.png")
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\1.jpg")
             });
 
             context.ImageEntitys.Add(new ImageEntity
             {
                 Description = "Second image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageModel\Image\smile.png")
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\2.jpg")
             });
 
             context.ImageEntitys.Add(new ImageEntity
             {
                 Description = "Third image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageModel\Image\smile2.png")
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\3.jpg")
+            });
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Fourth image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\4.jpg")
+            });
+
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Fifth image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\5.jpg")
+            });
+
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Sixth image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\6.jpg")
+            });
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Seventh image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\7.jpg")
+            });
+
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Eighth image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\8.jpg")
+            });
+
+            context.ImageEntitys.Add(new ImageEntity
+            {
+                Description = "Ninth image.",
+                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\9.jpg")
             });
 
             context.SaveChanges();

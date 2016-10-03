@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ImageData.Metods
 {
-    class ImageProvider
+    public class ImageProvider
     {
         public static byte[] GetImage(string filePath)
         {

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="gallery">
+    <div class="col-md-offset-5">
+        <h2>Images gallery</h2>
+    </div>
+    
+    
+    @foreach (var element in Model)
+    {
+        
+        var imgsrc = "";
+        var base64 = Convert.ToBase64String(element.Photo);
+        imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+
+        <a class="fancybox" id="@element.ImageId" rel="gallery" href="@imgsrc" title="@element.Description">
+            <img src="@imgsrc" alt="" />
+        </a>
+        
+    }
+</div>
+

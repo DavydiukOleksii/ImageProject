@@ -29,26 +29,27 @@ namespace WpfClient.View.ViewModel
                         client.Close();
                     }
                 }
+                System.Console.WriteLine(_images.Count());
                 return _images;
             }
             protected set{}
         }
 
-        #region ButtonCommand
-        RelayCommand _clientCommand;
+        //#region ButtonCommand
+        //RelayCommand _clientCommand;
 
-        public ICommand Client
-        {
-            get
-            {
-                if (_clientCommand == null)
-                {
-                    //_clientCommand = new RelayCommand(ExecuteClientCommand, );
-                }
-                return _clientCommand;
-            }
-        }
-        #endregion
+        //public ICommand Client
+        //{
+        //    get
+        //    {
+        //        if (_clientCommand == null)
+        //        {
+        //            //_clientCommand = new RelayCommand(ExecuteClientCommand, );
+        //        }
+        //        return _clientCommand;
+        //    }
+        //}
+        //#endregion
 
         protected override void OnDispose() 
         {
