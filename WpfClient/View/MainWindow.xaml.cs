@@ -24,5 +24,10 @@ namespace WpfClient.View
         {
             InitializeComponent();
         }
+
+        private void DockPanel_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
     }
 }

@@ -15,7 +15,6 @@ namespace WpfClient.View.ViewModel
     public class MainWindowViewModel: ViewModelBase
     {
         IEnumerable<ImageViewModel> _images;
-
         public IEnumerable<ImageViewModel> Images 
         {
             get 
@@ -27,12 +26,26 @@ namespace WpfClient.View.ViewModel
                         client.Open();
                         _images = client.GetAll();
                         client.Close();
+                        SelectedImage = _images.First();
                     }
                 }
-                System.Console.WriteLine(_images.Count());
                 return _images;
             }
             protected set{}
+        }
+
+        protected ImageViewModel _selectedImage;
+        public ImageViewModel SelectedImage
+        {
+            get
+            {
+                return _selectedImage;
+            }
+            set
+            {
+                OnPropertyChanged("SelectedImage");
+                _selectedImage = value;
+            }
         }
 
         //#region ButtonCommand

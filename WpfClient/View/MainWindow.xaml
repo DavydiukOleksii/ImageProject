@@ -5,7 +5,7 @@
         Width="800"
         Height="450">
 
-    <Window.Resources>
+    <!--<Window.Resources>
         <DataTemplate x:Key="ImageGalleryDataTemplate">
             <Grid>
                 <Border Width="150"
@@ -30,7 +30,9 @@
         </DataTemplate>
 
         <ItemsPanelTemplate x:Key="ImageGalleryItemsPanelTemplate">
-            <!--  Display Images on UniformGrid Panel  -->
+    -->
+    <!--  Display Images on UniformGrid Panel  -->
+    <!--
             <UniformGrid HorizontalAlignment="Center"
                          VerticalAlignment="Stretch"
                          Columns="3" />
@@ -48,8 +50,31 @@
                 <GradientStop Offset="1" Color="#FF1E2A2F" />
             </LinearGradientBrush>
         </ListBox.Background>
-    </ListBox>
+    </ListBox>-->
 
+    <Grid Margin="10" RenderTransformOrigin="0.306,0.498">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="25*" />
+        </Grid.ColumnDefinitions>
 
+        <ListBox Grid.Column="0"
+                 ItemsSource="{Binding Images}"
+                 SelectedItem="{Binding SelectedImage}"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ImageId}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <DockPanel Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="5">Image gallery</TextBlock>        
+            <TextBlock DockPanel.Dock="Bottom" Text="{Binding SelectedImage.Description}" Height="20" TextAlignment="Center" Width="auto"  Margin="0 0 5 0"/>
+            <Image Source="{Binding SelectedImage.Photo}" MaxHeight="1000" MaxWidth="800"  Margin="5"/>
+        </DockPanel>
+
+    </Grid>
 
 </Window>
