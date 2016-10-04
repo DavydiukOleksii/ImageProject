@@ -12,6 +12,7 @@ namespace WpfClient.View.Infrastructure
         readonly Action<object> _execute;
         readonly Predicate<object> _canExecute;
 
+        #region Constructor
         public RelayCommand(Action<object> execute)
             :this(execute, null)
         { }
@@ -26,12 +27,15 @@ namespace WpfClient.View.Infrastructure
             _execute = execute;
             _canExecute = canExecute;
         }
+        #endregion
 
+        //визначає, коли кнопка може бути використана, а коли ні 
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute.Invoke(parameter);
         }
 
+        //виконується, коли міг змінитися стан canExecute, змушує елементи перевіряти стан виконання команди
         public event EventHandler CanExecuteChanged
         {
             add 
@@ -44,6 +48,7 @@ namespace WpfClient.View.Infrastructure
             }
         }
 
+        //запускає логіку команди
         public void Execute(object parameter) 
         {
             _execute.Invoke(parameter);

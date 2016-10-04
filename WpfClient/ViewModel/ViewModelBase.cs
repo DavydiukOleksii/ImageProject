@@ -7,6 +7,7 @@ using System.ComponentModel;
 
 namespace WpfClient.View.ViewModel
 {
+    //клас для реалізації спілкування між View i ViewModel
     public abstract class ViewModelBase: INotifyPropertyChanged, IDisposable
     {
         protected ViewModelBase() { }

@@ -33,8 +33,6 @@ namespace DataRepository
         {
             using(ImageDataContext context = new ImageDataContext())
             {
-                    //context.Database.Connection.Open();
-
                 var allImages = (
                     from image in context.ImageEntitys
                     select new ImageViewModel 
@@ -43,8 +41,6 @@ namespace DataRepository
                         Description = image.Description,
                         Photo = image.Photo
                     }).ToList();
-
-                //context.Database.Connection.Close();
                 return allImages;
             }
         }
@@ -53,8 +49,6 @@ namespace DataRepository
         {
             using (ImageDataContext context = new ImageDataContext())
             {
-               // context.Database.Connection.Open();
-
                 var someImage = (
                     from image in context.ImageEntitys
                     where image.ImageId == Id
@@ -65,12 +59,9 @@ namespace DataRepository
                         Photo = image.Photo
                     }
                 ).FirstOrDefault();
-                
-               //context.Database.Connection.Close();
                 return someImage;
             }
         }
-
         #endregion
     }
 }

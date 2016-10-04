@@ -9,6 +9,7 @@ namespace ImageData.Metods
 {
     public class ImageProvider
     {
+        //метод для завантаження картинок в БД
         public static byte[] GetImage(string filePath)
         {
             FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);

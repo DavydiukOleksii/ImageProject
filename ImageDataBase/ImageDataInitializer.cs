@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace ImageData
 {
+    //очищує БД якщо модель змінилася
     class ImageDataInitializer: DropCreateDatabaseIfModelChanges<ImageDataContext>
     {
+        //перевизначаємо метод для запису даних підчас процесу ініціалізації БД
         protected override void Seed(ImageDataContext context)
         {
             context.ImageEntitys.RemoveRange(context.ImageEntitys);

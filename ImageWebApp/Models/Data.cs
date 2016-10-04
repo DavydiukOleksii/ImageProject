@@ -6,6 +6,7 @@ using ImageWebApp.ServiceImage;
 
 namespace ImageWebApp.Models
 {
+
     public class Data
     {
         #region Singleton
@@ -25,15 +26,16 @@ namespace ImageWebApp.Models
         protected Data() { }
         #endregion
 
+        //колексія для збереження даних отриманих від сервера
         protected IEnumerable<ImageViewModel> _dataList;
-
         public IEnumerable<ImageViewModel> DataList 
         {
             get 
             {
                 if (_dataList == null) 
                 { 
-                    using(ImageServiceClient client = new ImageServiceClient()){
+                    using(ImageServiceClient client = new ImageServiceClient())
+                    {
                         client.Open();
                         _dataList = client.GetAll();
                         client.Close();

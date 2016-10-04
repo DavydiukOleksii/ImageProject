@@ -5,53 +5,6 @@
         Width="800"
         Height="450">
 
-    <!--<Window.Resources>
-        <DataTemplate x:Key="ImageGalleryDataTemplate">
-            <Grid>
-                <Border Width="150"
-                        Height="150"
-                        Margin="15"
-                        BorderBrush="Gainsboro"
-                        BorderThickness="3"
-                        CornerRadius="10"
-                        Padding="10">
-                    <Image MaxHeight="250"
-                           HorizontalAlignment="Center"
-                           Source="{Binding Photo}"
-                           Stretch="Uniform">
-                        <Image.ToolTip>
-                            <Grid>
-                                <TextBlock Text="{Binding Description}" />
-                            </Grid>
-                        </Image.ToolTip>
-                    </Image>
-                </Border>
-            </Grid>
-        </DataTemplate>
-
-        <ItemsPanelTemplate x:Key="ImageGalleryItemsPanelTemplate">
-    -->
-    <!--  Display Images on UniformGrid Panel  -->
-    <!--
-            <UniformGrid HorizontalAlignment="Center"
-                         VerticalAlignment="Stretch"
-                         Columns="3" />
-        </ItemsPanelTemplate>
-
-    </Window.Resources>
-
-    <ListBox x:Name="LsImageGallery"
-             ItemTemplate="{DynamicResource ImageGalleryDataTemplate}"
-             ItemsPanel="{DynamicResource ImageGalleryItemsPanelTemplate}"
-             ItemsSource="{Binding Images}">
-        <ListBox.Background>
-            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                <GradientStop Color="White" />
-                <GradientStop Offset="1" Color="#FF1E2A2F" />
-            </LinearGradientBrush>
-        </ListBox.Background>
-    </ListBox>-->
-
     <Grid Margin="10" RenderTransformOrigin="0.306,0.498">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*" />
@@ -60,21 +13,26 @@
 
         <ListBox Grid.Column="0"
                  ItemsSource="{Binding Images}"
-                 SelectedItem="{Binding SelectedImage}"
-                 >
+                 SelectedItem="{Binding SelectedImage}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding ImageId}" />
+                    <TextBlock Text="{Binding Description}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
         <DockPanel Grid.Column="1">
-            <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="5">Image gallery</TextBlock>        
-            <TextBlock DockPanel.Dock="Bottom" Text="{Binding SelectedImage.Description}" Height="20" TextAlignment="Center" Width="auto"  Margin="0 0 5 0"/>
-            <Image Source="{Binding SelectedImage.Photo}" MaxHeight="1000" MaxWidth="800"  Margin="5"/>
+            <TextBlock Margin="5"
+                       HorizontalAlignment="Center"
+                       DockPanel.Dock="Top">
+                Image gallery
+            </TextBlock>
+                       
+            <Image MaxWidth="800"
+                   MaxHeight="1000"
+                   Margin="5"
+                   Source="{Binding SelectedImage.Photo}" />
         </DockPanel>
 
     </Grid>
-
 </Window>

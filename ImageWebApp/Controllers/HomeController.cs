@@ -10,7 +10,7 @@ namespace ImageWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        // стандартний контролер для відображення базової сторінки
         public ActionResult Index()
         {
             return View(Data.Instance.DataList);

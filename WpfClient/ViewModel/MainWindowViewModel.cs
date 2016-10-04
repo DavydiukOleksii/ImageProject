@@ -14,6 +14,8 @@ namespace WpfClient.View.ViewModel
 {
     public class MainWindowViewModel: ViewModelBase
     {
+        #region Data
+        //колекція для збереження об'єктів від сервера
         IEnumerable<ImageViewModel> _images;
         public IEnumerable<ImageViewModel> Images 
         {
@@ -34,6 +36,7 @@ namespace WpfClient.View.ViewModel
             protected set{}
         }
 
+        //об'єки для збереження поточного елемента
         protected ImageViewModel _selectedImage;
         public ImageViewModel SelectedImage
         {
@@ -43,12 +46,13 @@ namespace WpfClient.View.ViewModel
             }
             set
             {
-                OnPropertyChanged("SelectedImage");
                 _selectedImage = value;
+                OnPropertyChanged("SelectedImage");
             }
         }
+        #endregion
 
-        //#region ButtonCommand
+        #region ButtonCommand
         //RelayCommand _clientCommand;
 
         //public ICommand Client
@@ -62,11 +66,14 @@ namespace WpfClient.View.ViewModel
         //        return _clientCommand;
         //    }
         //}
-        //#endregion
+        #endregion
 
+        #region FreeData
         protected override void OnDispose() 
         {
+            //чистим колекцію
             this.Images.Except(Images);
         }
+        #endregion
     }
 }
