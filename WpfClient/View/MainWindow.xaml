@@ -27,7 +27,6 @@
                        DockPanel.Dock="Top">
                 Image gallery
             </TextBlock>
-                       
             <Image MaxWidth="800"
                    MaxHeight="1000"
                    Margin="5"

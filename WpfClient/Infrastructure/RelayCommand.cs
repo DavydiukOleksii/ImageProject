@@ -29,13 +29,13 @@ namespace WpfClient.View.Infrastructure
         }
         #endregion
 
-        //визначає, коли кнопка може бути використана, а коли ні 
+        //визначає, коли команда може бути виконана, а коли ні 
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute.Invoke(parameter);
         }
 
-        //виконується, коли міг змінитися стан canExecute, змушує елементи перевіряти стан виконання команди
+        //виконується, коли міг змінитися стан canExecute, змушує елементи перевіряти стан дозволу на виконання команди
         public event EventHandler CanExecuteChanged
         {
             add 

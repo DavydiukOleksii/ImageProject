@@ -61,10 +61,21 @@ namespace WpfClient.View.ViewModel
         //    {
         //        if (_clientCommand == null)
         //        {
-        //            //_clientCommand = new RelayCommand(ExecuteClientCommand, );
+        //            _clientCommand = new RelayCommand(ExecuteAddImageCommand, CanExecuteAddImageCommand);
         //        }
         //        return _clientCommand;
         //    }
+        //}
+
+        //public void ExecuteAddImageCommand(object parameter)
+        //{
+        //    Images.Add(new ImageViewModel { Description = "add image"});
+        //}
+
+        //public bool CanExecuteAddImageCommand(object parameter)
+        //{
+        //    if(true) return true;
+        //    else return false;
         //}
         #endregion
 
