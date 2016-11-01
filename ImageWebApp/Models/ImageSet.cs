@@ -1,47 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using ImageWebApp.ServiceImage;
 
 namespace ImageWebApp.Models
 {
 
-    public class Data
+    public class ImageSet
     {
         #region Singleton
-        protected static Data instance = null;
-        public static Data Instance
+        protected static ImageSet instance = null;
+        public static ImageSet Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new Data();
+                    instance = new ImageSet();
                 return instance;
             }
         }
         #endregion 
 
         #region Constructor
-        protected Data() { }
+        protected ImageSet() { }
         #endregion
 
-        //колексія для збереження даних отриманих від сервера
-        protected IEnumerable<ImageViewModel> _dataList;
-        public IEnumerable<ImageViewModel> DataList 
+        //collection with data from server
+        protected IEnumerable<ImageViewModel> _imageList;
+        public IEnumerable<ImageViewModel> ImageList 
         {
             get 
             {
-                if (_dataList == null) 
+                if (_imageList == null) 
                 { 
                     using(ImageServiceClient client = new ImageServiceClient())
                     {
                         client.Open();
-                        _dataList = client.GetAll();
+                        _imageList = client.GetAll();
                         client.Close();
                     }
                 }
-                return _dataList;
+                return _imageList;
             }
             protected set { }
         }

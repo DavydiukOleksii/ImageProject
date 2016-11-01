@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using WpfClient.Model;
-using WpfClient.View.ImageServer;
 using System.Windows.Input;
+using WpfClient.View.ImageServer;
 using WpfClient.View.Infrastructure;
 
 namespace WpfClient.View.ViewModel
@@ -15,7 +9,7 @@ namespace WpfClient.View.ViewModel
     public class MainWindowViewModel: ViewModelBase
     {
         #region Data
-        //колекція для збереження об'єктів від сервера
+        //collection with elements from server
         IEnumerable<ImageViewModel> _images;
         public IEnumerable<ImageViewModel> Images 
         {
@@ -23,7 +17,7 @@ namespace WpfClient.View.ViewModel
             {
                 if (_images == null) 
                 { 
-                    using(ImageServer.ImageServiceClient client = new ImageServer.ImageServiceClient())
+                    using(ImageServiceClient client = new ImageServiceClient())
                     {
                         client.Open();
                         _images = client.GetAll();
@@ -53,7 +47,7 @@ namespace WpfClient.View.ViewModel
         #endregion
 
         #region Command
-
+        
         #region NextImage
         RelayCommand _nextImageCommand;
         
@@ -134,7 +128,7 @@ namespace WpfClient.View.ViewModel
         #region FreeData
         protected override void OnDispose() 
         {
-            //чистим колекцію
+            //delete collection
             this.Images.Except(Images);
         }
         #endregion

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace WpfClient.View.Infrastructure
@@ -29,13 +25,13 @@ namespace WpfClient.View.Infrastructure
         }
         #endregion
 
-        //визначає, коли команда може бути виконана, а коли ні 
+        //determines when the command can execute
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute.Invoke(parameter);
         }
 
-        //виконується, коли міг змінитися стан canExecute, змушує елементи перевіряти стан дозволу на виконання команди
+        //event, when the state canExecute been changed, the elements check it event
         public event EventHandler CanExecuteChanged
         {
             add 
@@ -48,7 +44,7 @@ namespace WpfClient.View.Infrastructure
             }
         }
 
-        //запускає логіку команди
+        //start logic of command
         public void Execute(object parameter) 
         {
             _execute.Invoke(parameter);

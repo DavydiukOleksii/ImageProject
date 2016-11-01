@@ -1,27 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 
 namespace WpfClient.View.ViewModel
 {
-    //клас для реалізації спілкування між View i ViewModel
+    //class for communication between View and ViewModel
     public abstract class ViewModelBase: INotifyPropertyChanged, IDisposable
     {
-        protected ViewModelBase() { }
-
         #region ElementChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //якщо потрібно буде працювати з пококами кожен з них буде генерувати різні події, щоб всі вони не користувалися одним ресурсом
-        public virtual void OnPropertyChanged(string PropertyName) 
+        //if you want to work with different flow, each will generate different events that they did not use a collective resource
+        public virtual void OnPropertyChanged(string propertyName) 
         {
             PropertyChangedEventHandler handler = this.PropertyChanged;
             if (handler != null)
             {
-                handler.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+                handler.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
 
         }

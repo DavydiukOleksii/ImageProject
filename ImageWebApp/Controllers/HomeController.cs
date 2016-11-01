@@ -10,10 +10,10 @@ namespace ImageWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        // стандартний контролер для відображення базової сторінки
+        // default controller for basic webpage
         public ActionResult Index()
         {
-            return View(Data.Instance.DataList);
+            return View(ImageSet.Instance.ImageList);
         }
     }
 }

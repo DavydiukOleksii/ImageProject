@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace ImageData.Metods
 {
     public class ImageProvider
     {
-        //метод для завантаження картинок в БД
+        //method for downloading images to DB
         public static byte[] GetImage(string filePath)
         {
             FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);

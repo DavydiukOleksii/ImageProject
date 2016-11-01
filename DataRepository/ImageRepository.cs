@@ -1,9 +1,6 @@
-﻿using DataViewModels;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataViewModels;
 using ImageData;
 
 namespace DataRepository
@@ -27,8 +24,7 @@ namespace DataRepository
         protected ImageRepository() { }
         #endregion
 
-        #region PublicMetods
-
+        #region PublicMethods
         public List<ImageViewModel> GetAll()
         {
             using(ImageDataContext context = new ImageDataContext())

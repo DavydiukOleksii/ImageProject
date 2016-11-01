@@ -1,73 +1,39 @@
-﻿using ImageData.Entitys;
-using ImageData.Metods;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Web;
+using ImageData.Entitys;
+using ImageData.Metods;
 
 namespace ImageData
 {
-    //очищує БД якщо модель змінилася
-    class ImageDataInitializer: DropCreateDatabaseIfModelChanges<ImageDataContext>
+    //delete DB always
+    class ImageDataInitializer: DropCreateDatabaseAlways<ImageDataContext>
     {
-        //перевизначаємо метод для запису даних підчас процесу ініціалізації БД
+        //Overrides method for recording data during the initialization of the database
         protected override void Seed(ImageDataContext context)
         {
             context.ImageEntitys.RemoveRange(context.ImageEntitys);
 
-            context.ImageEntitys.Add(new ImageEntity
+            try
             {
-                Description = "First image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\1.jpg")
-            });
+                // Only get files that begin with the format .jpg
+                string[] dirs = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/Images/"), "*.jpg");
 
-            context.ImageEntitys.Add(new ImageEntity
+                foreach (string dir in dirs)
+                {
+                    context.ImageEntitys.Add(new ImageEntity
+                    {
+                        Description = String.Format("Image " + dir.Substring(dir.LastIndexOf('\\') + 1, dir.IndexOf('.') - dir.LastIndexOf('\\') - 1) + "."),
+                        Photo = ImageProvider.GetImage(dir)
+                    });
+                }
+            }
+            catch (Exception e)
             {
-                Description = "Second image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\2.jpg")
-            });
-
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Third image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\3.jpg")
-            });
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Fourth image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\4.jpg")
-            });
-
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Fifth image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\5.jpg")
-            });
-
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Sixth image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\6.jpg")
-            });
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Seventh image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\7.jpg")
-            });
-
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Eighth image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\8.jpg")
-            });
-
-            context.ImageEntitys.Add(new ImageEntity
-            {
-                Description = "Ninth image.",
-                Photo = ImageProvider.GetImage(@"D:\Projects\ImageTestProject\ImageDataBase\Images\9.jpg")
-            });
+                //add error log
+                //Console.WriteLine(e.Message);
+            }
 
             context.SaveChanges();
             base.Seed(context);
