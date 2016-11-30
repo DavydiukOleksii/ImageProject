@@ -1,6 +1,6 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,15 +16,22 @@ textarea {
     max-width: 280px;
 }
 
-/* Gallery */
+/* All image */
 .gallery img{
-    margin:9px; /* внешние отступы картинок */
-    border:4px solid #fff; /* рамка картинок */
+    margin: 9px; 
+    border: 4px solid #fff;
     max-height: 350px;
     max-width: 350px;
 }
 
 a.fancybox:hover img{
-    border:3px solid #034F80; /* изменение цвета рамки при наведении на картинку */
+    border: 3px solid #1aadc2; /* change the colore of border when you target the image */
 }
 
+/*Random image*/
+.oneImage img {
+    margin:9px;
+    border:4px solid #fff;
+    max-height: 880px;
+    max-width: 880px;
+}

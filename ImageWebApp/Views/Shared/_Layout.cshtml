@@ -32,15 +32,18 @@
 
 </head>
 <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class ="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
             <div class="navbar-header">
-                @Html.ActionLink("Test image progect", "Index", "Home", new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#">Image gallery</a>
             </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Home", "Home", new { }, null)</li>
+                <li>@Html.ActionLink("Randome image", "RandImage", "Home", new { }, null)</li>
+                <li>@Html.ActionLink("All image", "AllImage", "Home", new { }, null)</li>
+            </ul>
         </div>
-    </div>
-
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />

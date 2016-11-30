@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ImageWebApp.ServiceImage;
 
 namespace ImageWebApp.Models
@@ -41,6 +43,12 @@ namespace ImageWebApp.Models
                 return _imageList;
             }
             protected set { }
+        }
+
+        public ImageViewModel RandomeImage()
+        {
+            Random rnd = new Random();
+            return ImageList.ElementAt(rnd.Next(0, ImageList.Count()));
         }
     }
 }
