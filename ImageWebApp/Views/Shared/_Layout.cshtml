@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <!--бібліотеки і скріпти для fancybox-->
@@ -32,24 +33,37 @@
 
 </head>
 <body>
-    <nav class ="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Image gallery</a>
+    <div class="row">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Images gallery</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Home", "Home", new { }, null)</li>
+                        <li>@Html.ActionLink("Random images", "RandImage", "Home", new { }, null)</li>
+                        <li>@Html.ActionLink("All images", "AllImage", "Home", new { }, null)</li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Home", "Home", new { }, null)</li>
-                <li>@Html.ActionLink("Randome image", "RandImage", "Home", new { }, null)</li>
-                <li>@Html.ActionLink("All image", "AllImage", "Home", new { }, null)</li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <div class="container body-content">
-        @RenderBody()
+        <div class="row">
+            @RenderBody()
+        </div>
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET Application</p>
-        </footer>
+        <div class="row">
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ASP.NET Application</p>
+            </footer>
+        </div>
     </div>
 
 </body>
